@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Pen Review — CodePen 2.0</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+<section id="list" class="view is-active">
+  <div class="wrap">
+    <header class="masthead">
+      <div class="masthead__brand">The <em>Pen</em> Review</div>
+      <div class="masthead__note">Issue 02 · Front-end</div>
+    </header>
+    <button class="card" id="toArticle" type="button" aria-controls="article">
+      <div class="card__figure">
+        <img class="card__image" src="https://assets.codepen.io/t-1/launch-email-1-header.jpg?width=900&format=auto" alt="CodePen 2.0 is here!" />
+      </div>
+      <div class="card__body">
+        <span class="kicker">Product · Longread</span>
+        <h1 class="card__title">CodePen 2.0 Is Here</h1>
+        <p class="card__desc">A full rewrite of the editor you know — files, folders, Blocks and an Omnibar — built for the way front-end work actually happens now.</p>
+        <footer class="card__meta">
+          <time datetime="2026-07-21">July 21, 2026</time><span aria-hidden="true">·</span><span>Chris Coyier</span><span class="card__cta">Read →</span>
+        </footer>
+      </div>
+    </button>
+  </div>
+</section>
+<section id="article" class="view" aria-hidden="true">
+  <div class="hero"><img class="hero__image" src="https://assets.codepen.io/t-1/launch-email-1-header.jpg?width=1600&format=auto" alt="CodePen 2.0 is here!" /></div>
+  <article class="article">
+    <header class="article__head">
+      <button class="back" id="toList" type="button" aria-controls="list">← Index</button>
+      <h1 class="article__title">CodePen 2.0 Is Here</h1>
+      <div class="article__meta"><time datetime="2026-07-21">July 21, 2026</time><span aria-hidden="true">·</span><span>Chris Coyier</span><span aria-hidden="true">·</span><span>6 min read</span></div>
+    </header>
+    <div class="article__content">
+      <p>After years of the same trusty editor, CodePen 2.0 is a full rewrite from the ground up. The thing you open every day is now faster, more flexible, and built around the reality of modern front-end work.</p>
+      <p>The headline change is real files and folders. No more juggling three fixed panes — organize a Pen the way you'd organize an actual project, with as many files as you need and a proper tree to navigate them.</p>
+      <blockquote class="pull">The editor stopped being three boxes and started being a project.</blockquote>
+      <p>Blocks let you compose reusable pieces and drop them into any Pen, while the new Omnibar puts search, navigation and commands a single keystroke away. It's the kind of quality-of-life upgrade that quietly changes how you work — you stop thinking about the tool and start thinking about the thing you're making.</p>
+      <p>Everything you loved is still here — instant previews, easy sharing, the same welcoming community. It just grew up to match the way front-end development actually happens now.</p>
+    </div>
+  </article>
+</section>
+<script src="./script.js"></script>
+  </body>
+</html>
