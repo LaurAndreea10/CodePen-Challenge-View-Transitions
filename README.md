@@ -1,25 +1,30 @@
 # Elsewhere — A View Transition Atlas
 
-A cinematic, responsive destination atlas created for the July 2026 CodePen Challenge: **View Transitions**.
+A cinematic interactive atlas created for the **CodePen Challenge: View Transitions**.
 
 ## Highlights
 
-- Shared-element morphing from destination cards into full-screen stories
-- Dynamic accent colors and atmospheric backgrounds
-- Direction-aware transitions between destinations
-- Keyboard navigation, swipe gestures and browser history support
-- User-controlled motion toggle
-- `prefers-reduced-motion` support
-- Graceful fallback when the View Transitions API is unavailable
-- Responsive layouts for desktop, tablet and mobile
+- Circular portal transition from the exact click position
+- Shared-element image, title and index morphing
+- Four destination stories with keyboard and swipe navigation
+- Interactive mini-map and progress timeline
+- Day/night transformation for every destination
+- Optional Web Audio soundscapes
+- Split-screen Compare Views mode
+- Intro sequence and desktop Explore cursor
+- Motion toggle, `prefers-reduced-motion` support and instant fallback
+- Responsive design for desktop, tablet and mobile
 
-## Built with
+## CodePen
 
-- Semantic HTML
-- Modern CSS
-- CSS View Transitions API
-- Vanilla JavaScript
+**Suggested title:** Elsewhere — A Cinematic View Transition Atlas
 
-## Challenge tags
+**Suggested description:**
 
-`cpc-view-transitions` · `codepenchallenge`
+> Four destinations become one moving canvas. Elsewhere combines shared-element morphs, click-position portal reveals, day/night scene changes, an interactive mini-map, split-screen comparison and optional generative soundscapes using the CSS View Transitions API.
+
+**Tags:** `cpc-view-transitions`, `codepenchallenge`, `view-transitions`, `css`, `javascript`, `accessibility`
+
+## Live demo
+
+https://laurandreea10.github.io/CodePen-Challenge-View-Transitions/
