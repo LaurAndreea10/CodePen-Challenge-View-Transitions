@@ -1,40 +1,25 @@
-# CodePen Challenge: View Transitions
+# Elsewhere — A View Transition Atlas
 
-An editorial single-page experience created for the **CodePen 2.0 View Transitions Challenge**.
+A cinematic, responsive destination atlas created for the July 2026 CodePen Challenge: **View Transitions**.
 
-The project morphs the article image and title between an index card and a long-form article view. It uses the native View Transitions API when available and includes a JavaScript FLIP fallback for browsers without support.
+## Highlights
 
-## Features
-
-- Native `document.startViewTransition()` navigation
-- Shared image and title transitions
-- Custom root fade and slide animations
-- JavaScript FLIP fallback
-- Browser Back/Forward history support
-- Direct `#article` navigation
-- Escape-key navigation
-- Focus management and visible focus states
+- Shared-element morphing from destination cards into full-screen stories
+- Dynamic accent colors and atmospheric backgrounds
+- Direction-aware transitions between destinations
+- Keyboard navigation, swipe gestures and browser history support
+- User-controlled motion toggle
 - `prefers-reduced-motion` support
-- Responsive editorial layout
-- GitHub Pages ready
+- Graceful fallback when the View Transitions API is unavailable
+- Responsive layouts for desktop, tablet and mobile
 
-## Technologies
+## Built with
 
-- HTML5
-- CSS3
-- JavaScript
+- Semantic HTML
+- Modern CSS
 - CSS View Transitions API
-- Web Animations API
-- GitHub Pages
+- Vanilla JavaScript
 
 ## Challenge tags
 
-- `cpc-view-transitions`
-- `codepenchallenge`
-
-## Author
-
-**Laura Andreea**
-
-- GitHub: [LaurAndreea10](https://github.com/LaurAndreea10)
-- CodePen: [Laura-Andreea-the-typescripter](https://codepen.io/Laura-Andreea-the-typescripter)
+`cpc-view-transitions` · `codepenchallenge`
