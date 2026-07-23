@@ -3,50 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The Pen Review — CodePen 2.0</title>
+    <meta name="theme-color" content="#10131a" />
+    <meta name="description" content="A cinematic travel atlas powered by the CSS View Transitions API." />
+    <title>Elsewhere — A View Transition Atlas</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-<section id="list" class="view is-active">
-  <div class="wrap">
-    <header class="masthead">
-      <div class="masthead__brand">The <em>Pen</em> Review</div>
-      <div class="masthead__note">Issue 02 · Front-end</div>
-    </header>
-    <button class="card" id="toArticle" type="button" aria-controls="article">
-      <div class="card__figure">
-        <img class="card__image" src="https://assets.codepen.io/t-1/launch-email-1-header.jpg?width=900&format=auto" alt="CodePen 2.0 is here!" />
-      </div>
-      <div class="card__body">
-        <span class="kicker">Product · Longread</span>
-        <h1 class="card__title">CodePen 2.0 Is Here</h1>
-        <p class="card__desc">A full rewrite of the editor you know — files, folders, Blocks and an Omnibar — built for the way front-end work actually happens now.</p>
-        <footer class="card__meta">
-          <time datetime="2026-07-21">July 21, 2026</time><span aria-hidden="true">·</span><span>Chris Coyier</span><span class="card__cta">Read →</span>
-        </footer>
-      </div>
-    </button>
-  </div>
-</section>
-<section id="article" class="view" aria-hidden="true">
-  <div class="hero"><img class="hero__image" src="https://assets.codepen.io/t-1/launch-email-1-header.jpg?width=1600&format=auto" alt="CodePen 2.0 is here!" /></div>
-  <article class="article">
-    <header class="article__head">
-      <button class="back" id="toList" type="button" aria-controls="list">← Index</button>
-      <h1 class="article__title">CodePen 2.0 Is Here</h1>
-      <div class="article__meta"><time datetime="2026-07-21">July 21, 2026</time><span aria-hidden="true">·</span><span>Chris Coyier</span><span aria-hidden="true">·</span><span>6 min read</span></div>
-    </header>
-    <div class="article__content">
-      <p>After years of the same trusty editor, CodePen 2.0 is a full rewrite from the ground up. The thing you open every day is now faster, more flexible, and built around the reality of modern front-end work.</p>
-      <p>The headline change is real files and folders. No more juggling three fixed panes — organize a Pen the way you'd organize an actual project, with as many files as you need and a proper tree to navigate them.</p>
-      <blockquote class="pull">The editor stopped being three boxes and started being a project.</blockquote>
-      <p>Blocks let you compose reusable pieces and drop them into any Pen, while the new Omnibar puts search, navigation and commands a single keystroke away. It's the kind of quality-of-life upgrade that quietly changes how you work — you stop thinking about the tool and start thinking about the thing you're making.</p>
-      <p>Everything you loved is still here — instant previews, easy sharing, the same welcoming community. It just grew up to match the way front-end development actually happens now.</p>
-    </div>
-  </article>
-</section>
-<script src="./script.js"></script>
+    <div class="noise" aria-hidden="true"></div>
+    <main class="app" id="app">
+      <section class="atlas view is-active" id="atlas" aria-labelledby="atlas-title">
+        <header class="topbar"><a class="brand" href="#atlas" aria-label="Elsewhere home"><span class="brand__mark">E</span><span>Elsewhere</span></a><p class="topbar__note">A View Transition Atlas</p><button class="motion-toggle" id="motionToggle" type="button" aria-pressed="false">Motion: on</button></header>
+        <div class="atlas__intro"><p class="eyebrow">Choose a perspective</p><h1 id="atlas-title">Four places.<br />One moving canvas.</h1><p class="atlas__lede">Open a destination and watch its image, title and accent travel into a new composition.</p></div>
+        <div class="destination-grid" id="destinationGrid" aria-label="Destinations"></div>
+        <footer class="atlas__footer"><span>Use arrow keys to explore</span><span>Built for #cpc-view-transitions</span></footer>
+      </section>
+      <section class="story view" id="story" aria-hidden="true"><div class="story__backdrop" id="storyBackdrop" aria-hidden="true"></div><header class="story__topbar"><button class="icon-button" id="backButton" type="button" aria-label="Back to atlas">←</button><span class="story__counter" id="storyCounter">01 / 04</span><button class="icon-button" id="nextButton" type="button" aria-label="Next destination">→</button></header><article class="story__layout"><figure class="story__visual" id="storyVisual"><img class="story__image" id="storyImage" src="" alt="" /><figcaption class="story__coordinates" id="storyCoordinates"></figcaption></figure><div class="story__content"><p class="eyebrow" id="storyKicker"></p><h2 class="story__title" id="storyTitle" tabindex="-1"></h2><p class="story__summary" id="storySummary"></p><dl class="story__facts" id="storyFacts"></dl><blockquote class="story__quote" id="storyQuote"></blockquote><div class="story__nav"><button class="text-button" id="previousButton" type="button">← Previous</button><button class="text-button" id="nextTextButton" type="button">Next place →</button></div></div></article></section>
+    </main>
+    <div class="support-note" id="supportNote" role="status" aria-live="polite"></div><script src="./script.js"></script>
   </body>
 </html>
