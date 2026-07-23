@@ -1,26 +1,86 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#10131a" />
-    <meta name="description" content="A cinematic travel atlas powered by the CSS View Transitions API." />
-    <title>Elsewhere — A View Transition Atlas</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="./style.css" />
-  </head>
-  <body>
-    <div class="noise" aria-hidden="true"></div>
-    <main class="app" id="app">
-      <section class="atlas view is-active" id="atlas" aria-labelledby="atlas-title">
-        <header class="topbar"><a class="brand" href="#atlas" aria-label="Elsewhere home"><span class="brand__mark">E</span><span>Elsewhere</span></a><p class="topbar__note">A View Transition Atlas</p><button class="motion-toggle" id="motionToggle" type="button" aria-pressed="false">Motion: on</button></header>
-        <div class="atlas__intro"><p class="eyebrow">Choose a perspective</p><h1 id="atlas-title">Four places.<br />One moving canvas.</h1><p class="atlas__lede">Open a destination and watch its image, title and accent travel into a new composition.</p></div>
-        <div class="destination-grid" id="destinationGrid" aria-label="Destinations"></div>
-        <footer class="atlas__footer"><span>Use arrow keys to explore</span><span>Built for #cpc-view-transitions</span></footer>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#10131a" />
+  <meta name="description" content="Elsewhere is a cinematic atlas built with the CSS View Transitions API." />
+  <title>Elsewhere — A View Transition Atlas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="cursor" id="cursor" aria-hidden="true"><span>Explore</span></div>
+  <section class="intro is-active" id="intro" aria-labelledby="introTitle">
+    <div class="intro__orb" aria-hidden="true"></div>
+    <p class="eyebrow">A cinematic View Transition experiment</p>
+    <h1 id="introTitle">Choose where<br />to disappear.</h1>
+    <button class="primary-button" id="enterButton" type="button">Enter the atlas <span>↗</span></button>
+    <button class="skip-button" id="skipIntro" type="button">Skip intro</button>
+  </section>
+  <main class="app" id="app" hidden>
+    <section class="atlas view is-active" id="atlas" aria-labelledby="atlasTitle">
+      <header class="topbar">
+        <a class="brand" href="#atlas" aria-label="Elsewhere home"><span class="brand__mark">E</span><span>Elsewhere</span></a>
+        <p class="topbar__note">A View Transition Atlas</p>
+        <div class="topbar__actions">
+          <button class="pill-button" id="compareButton" type="button">Compare</button>
+          <button class="pill-button" id="soundToggle" type="button" aria-pressed="false">Sound: off</button>
+          <button class="pill-button" id="motionToggle" type="button" aria-pressed="false">Motion: on</button>
+        </div>
+      </header>
+      <div class="atlas__intro">
+        <div><p class="eyebrow">Choose a perspective</p><h1 id="atlasTitle">Four places.<br />One moving canvas.</h1></div>
+        <p class="atlas__lede">Images, titles, light, sound and position move as one continuous interface.</p>
+      </div>
+      <div class="destination-grid" id="destinationGrid" aria-label="Destinations"></div>
+      <section class="map-panel" aria-labelledby="mapTitle">
+        <div><p class="eyebrow">Mini map</p><h2 id="mapTitle">Navigate the coordinates</h2></div>
+        <div class="mini-map" id="miniMap" aria-label="Interactive destination map"></div>
       </section>
-      <section class="story view" id="story" aria-hidden="true"><div class="story__backdrop" id="storyBackdrop" aria-hidden="true"></div><header class="story__topbar"><button class="icon-button" id="backButton" type="button" aria-label="Back to atlas">←</button><span class="story__counter" id="storyCounter">01 / 04</span><button class="icon-button" id="nextButton" type="button" aria-label="Next destination">→</button></header><article class="story__layout"><figure class="story__visual" id="storyVisual"><img class="story__image" id="storyImage" src="" alt="" /><figcaption class="story__coordinates" id="storyCoordinates"></figcaption></figure><div class="story__content"><p class="eyebrow" id="storyKicker"></p><h2 class="story__title" id="storyTitle" tabindex="-1"></h2><p class="story__summary" id="storySummary"></p><dl class="story__facts" id="storyFacts"></dl><blockquote class="story__quote" id="storyQuote"></blockquote><div class="story__nav"><button class="text-button" id="previousButton" type="button">← Previous</button><button class="text-button" id="nextTextButton" type="button">Next place →</button></div></div></article></section>
-    </main>
-    <div class="support-note" id="supportNote" role="status" aria-live="polite"></div><script src="./script.js"></script>
-  </body>
+      <footer class="atlas__footer"><span>Arrow keys · swipe · click</span><span>#cpc-view-transitions</span></footer>
+    </section>
+    <section class="story view" id="story" aria-hidden="true">
+      <div class="story__backdrop" id="storyBackdrop" aria-hidden="true"></div>
+      <header class="story__topbar">
+        <button class="icon-button" id="backButton" type="button" aria-label="Back to atlas">←</button>
+        <div class="story__timeline" id="timeline" aria-label="Destination progress"></div>
+        <div class="story__controls">
+          <button class="pill-button" id="timeToggle" type="button" aria-pressed="false">Night view</button>
+          <button class="icon-button" id="nextButton" type="button" aria-label="Next destination">→</button>
+        </div>
+      </header>
+      <article class="story__layout">
+        <figure class="story__visual" id="storyVisual">
+          <img class="story__image" id="storyImage" src="" alt="" />
+          <figcaption class="story__coordinates" id="storyCoordinates"></figcaption>
+          <span class="story__mode" id="storyMode">Day</span>
+        </figure>
+        <div class="story__content">
+          <p class="eyebrow" id="storyKicker"></p>
+          <p class="story__number" id="storyNumber">01</p>
+          <h2 class="story__title" id="storyTitle" tabindex="-1"></h2>
+          <p class="story__summary" id="storySummary"></p>
+          <dl class="story__facts" id="storyFacts"></dl>
+          <blockquote class="story__quote" id="storyQuote"></blockquote>
+          <div class="story__nav"><button class="text-button" id="previousButton" type="button">← Previous</button><button class="text-button" id="nextTextButton" type="button">Next place →</button></div>
+        </div>
+      </article>
+    </section>
+  </main>
+  <dialog class="compare" id="compareDialog">
+    <form method="dialog" class="compare__bar"><div><p class="eyebrow">Compare views</p><h2>Two places. One horizon.</h2></div><button class="icon-button" value="close" aria-label="Close compare">×</button></form>
+    <div class="compare__selectors"><label>Left<select id="compareLeft"></select></label><label>Right<select id="compareRight"></select></label></div>
+    <div class="compare__stage" id="compareStage">
+      <img id="compareImageA" alt="" />
+      <div class="compare__layer" id="compareLayer"><img id="compareImageB" alt="" /></div>
+      <input id="compareRange" type="range" min="0" max="100" value="50" aria-label="Compare image split" />
+      <span class="compare__handle" id="compareHandle" aria-hidden="true"></span>
+    </div>
+  </dialog>
+  <div class="support-note" id="supportNote" role="status" aria-live="polite"></div>
+  <script src="./script.js"></script>
+</body>
 </html>
