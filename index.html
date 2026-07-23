@@ -9,10 +9,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="./polish.css" />
 </head>
 <body>
   <div class="noise" aria-hidden="true"></div>
   <div class="cursor" id="cursor" aria-hidden="true"><span>Explore</span></div>
+  <div class="loading-veil" id="loadingVeil" aria-hidden="true"><span class="loading-veil__ring"></span><span class="loading-veil__label">Reframing the horizon</span></div>
+  <div class="support-badge" id="supportBadge" role="status"><span></span><b>Checking transitions…</b></div>
   <section class="intro is-active" id="intro" aria-labelledby="introTitle">
     <div class="intro__orb" aria-hidden="true"></div>
     <p class="eyebrow">A cinematic View Transition experiment</p>
@@ -80,7 +83,19 @@
       <span class="compare__handle" id="compareHandle" aria-hidden="true"></span>
     </div>
   </dialog>
+  <section class="secret-place" id="secretPlace" aria-hidden="true" aria-labelledby="secretTitle">
+    <div class="secret-place__sky" aria-hidden="true"></div>
+    <button class="secret-place__close" id="secretClose" type="button" aria-label="Return to atlas">×</button>
+    <div class="secret-place__content">
+      <p class="eyebrow">Unmapped · Between frames</p>
+      <span class="secret-place__number">05</span>
+      <h2 id="secretTitle" tabindex="-1">Eclipse</h2>
+      <p>A destination hidden between two renders. You found the place the atlas was never meant to show.</p>
+      <small>Hint discovered: ↑ ↑ ↓ ↓ ← → ← → B A</small>
+    </div>
+  </section>
   <div class="support-note" id="supportNote" role="status" aria-live="polite"></div>
   <script src="./script.js"></script>
+  <script src="./polish.js"></script>
 </body>
 </html>
